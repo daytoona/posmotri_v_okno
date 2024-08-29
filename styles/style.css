@@ -62,7 +62,8 @@ ol {
   overflow-y: scroll;
   scrollbar-width: none;
   block-size: 298px;
-  min-height: 534px;
+  inline-size: 399px;
+  overflow: auto;
 }
 .content__details {
   display: flex;
@@ -74,10 +75,10 @@ ol {
 .title {
   font-family: Oswald,sans-serif;
   font-size: 75px;
-  font-weight: 700;font-family: Oswald;
+  font-weight: 700;
   line-height: 70.5px;
   text-align: left;
-  padding: 0 0 26px;
+  text-transform: uppercase;
 }
 .content__accent {
   color: rgba(84, 80, 80, 1);
@@ -86,8 +87,8 @@ ol {
   margin-bottom: 34px;
 }
 .content__video-card-thumbnail {
-  inline-size: 194px;
-  block-size: 103px;
+  min-width: 194px;
+  height: 103px;
   object-fit: cover;
   object-position: center;
 }
@@ -104,25 +105,20 @@ ol {
  .result__video {
   display: block;
   object-fit: cover;
-  object-position: center;
-  inline-size: 711px;
-  block-size: 386px;
+  inline-size: 100%;
+  block-size: 100%;
  }
  .search-form__fieldset-title {
   font-weight: 400;
   font-size: 18px;
   font-family: Fira Sans Condensed,sans-serif;
-}
-.title {
-  font-family: Oswald, sans-serif;
-  font-weight: 700;
-  font-size: 75px;
-  line-height: 70.5px;
-  text-transform: uppercase;
+  padding-bottom: 5px;
 }
 .content__card-link {
+  display: block;
   text-decoration: none;
   color: rgba(255, 255, 255, 1);
+  margin: 2px;
 }
 .content__video-card-title {
   font-family: Oswald,sans-serif;
@@ -131,7 +127,9 @@ ol {
   line-height: 30px;
   text-transform: uppercase;
   padding: 2px 2px 5px;
-
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .content__video-card-description {
   font-weight: 400;
@@ -161,12 +159,18 @@ fieldset {
 .search-form__textfield {
   border-top: 1px solid;
   border-bottom: 1px solid;
-  border-bottom: px;
   border-color: rgba(255, 255, 255, 1);
   border-right: none;
   border-left: none;
   inline-size: 225px;
+  block-size: 27px;
   background-color: transparent;
+  appearance: none;
+  font-family: Fira Sans Condensed,sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  text-align: left;  
 }
 .search-form__textfield:focus {
   outline: none;
@@ -218,6 +222,7 @@ fieldset {
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 1);
   padding: 6px 0;
+  margin-top: 10px;
 }
 .search-form__submit-button {
   inline-size: 194px;
@@ -226,13 +231,19 @@ fieldset {
   inline-size: 399px;
 }
 .button:active {
-  background-color: #545050;
+  background-color: rgba(84, 80, 80, 1);
 }
-
 .button:hover {
   text-decoration: underline 1px rgba(255, 255, 255, 1);
 }
-
 .button:focus {
   outline: none;
+}
+.button:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, 1);
+  outline-offset: 1px;
+}
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid rgba(255, 255, 255, 1);
+  outline-offset: 1px;
 }
