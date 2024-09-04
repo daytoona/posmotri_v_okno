@@ -170,10 +170,6 @@ fieldset {
   gap: 5px;
 }
 
-.search-form__label-text:hover {
-  text-decoration: 1px underline rgba(255, 255, 255, 1);
-}
-
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
@@ -291,5 +287,5 @@ fieldset {
   outline-offset: 1px;
 }
 .search-form__label:hover .search-form__label-text {
-text-decoration: underline;
+  text-decoration: 1px underline rgba(255, 255, 255, 1);
 }
